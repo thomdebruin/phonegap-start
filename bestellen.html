@@ -1,0 +1,89 @@
+
+<!DOCTYPE html> 
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>jQuery Mobile Docs - Pages</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<script type="text/javascript">
+onload = function() {
+  document.getElementById('one').onchange = function() {
+  
+	  var a = parseInt(document.getElementById('one').value,10) * "2.95";  	 
+	  var b = parseInt(document.getElementById('two').value,10) * "3.45";
+	  
+	  var c = a + b;  
+  	 
+      document.getElementById('uno').value = this.value * "2.95"; 
+      document.getElementById('totaal').value = parseInt(c,10)      
+
+  };
+  
+  document.getElementById('two').onchange = function() {
+  
+	  var a = parseInt(document.getElementById('one').value,10) * "2.95";  	 
+	  var b = parseInt(document.getElementById('two').value,10) * "3.45";
+	  
+	  var c = a + b;
+
+      document.getElementById('dos').value = this.value * "3.45";
+      document.getElementById('totaal').value = parseInt(c,10)      
+  };  
+  
+
+
+};
+
+
+</script>
+</head> 
+<body> 
+
+	<div data-role="page" class="type-index">
+
+		<div data-role="header" >
+		<h1>Pizzeria</h1>
+		<a href="index.html" data-icon="home" data-iconpos="right" data-direction="reverse">Home</a>
+		<a href="instellingen.html" data-icon="gear" data-iconpos="right" data-rel="reverse" >Instellingen</a>
+	</div><!-- /header -->
+
+	<div data-role="content">
+
+<form method="post" action="verstuur.php" id="form1">
+			
+			<table width="500" border="0" cellspacing="5" cellpadding="5">
+				<tr>
+					<td><label for="txtItalie">Broodje Italia &#8364;2.95</label></td>
+				</tr>
+				<tr>	
+					<td><input type="range" name="italia" id="one" min="0" max="10" value="5" />
+				</tr>
+				<tr>
+					<td><label for="txtFormagio">Broodje Formagio &#8364;3.45</label></td>
+				</tr>
+				<tr>	
+					<td><input type="range" name="formagio" id="two" min="0" max="10" value="5" />
+				</tr>
+				<tr>
+					<td><label for="txtTotaal">Totaal</label></td>
+				</tr>
+				<tr>	
+					<td><input type="text" name="totaal" id="totaal" readonly="readonly"  >
+				</tr>
+				<tr>
+			<div id="uno">&nbsp;</div>
+<div id="dos">&nbsp;</div>
+					<td><input type="submit" name="btnSubmit" id="btnSubmit" value="Verzenden" tabindex="60">
+					</td>
+				</tr>
+			</table>
+		</form>
+
+		</div><!-- /ui-body wrapper -->	
+</div><!-- /page -->
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>Pizzeria</title> 
+	<title>jQuery Mobile Docs - Pages</title> 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
@@ -21,16 +21,14 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
+	
+	<p>Bedankt voor uw bestelling</p>
 
-				<p><img src="pizzeria.jpeg" height="150px;"></p>
+<?php 
+while (list($key,$value) = each($_POST)) { 
+   echo "$key: $value" . "<br />"; }
+?>
 
-			
-		<ul data-role="listview" data-inset="true">
-								<li><a href="bestellen.html">Bestellen</a></li>
-								<li><a href="aanbiedingen.html" data-ajax="false">Aanbiedingen</a></li>
-								<li><a href="contact.html" data-ajax="false">Contact</a></li>
-
-		</ul>
 
 
 		</div><!-- /ui-body wrapper -->	

@@ -1,0 +1,86 @@
+
+<!DOCTYPE html> 
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>jQuery Mobile Docs - Pages</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<script>
+function opslaan()
+{
+if(typeof(Storage)!=="undefined")
+  {
+    localStorage.naam=document.getElementById("naam").value;
+    
+    localStorage.telefoonnummer=document.getElementById("telefoonnummer").value;
+    
+  document.getElementById("result").innerHTML="Uw naam: " + localStorage.naam + " en telefoonnummer: " + localStorage.telefoonnummer +" zijn opgeslagen";
+  }
+else
+  {
+  document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
+  }
+  
+
+}
+
+$(document).ready(function() {
+  if(localStorage.naam !==null){
+  document.getElementById("check_naam").innerHTML="Naam: " + localStorage.naam;
+  document.getElementById("check_telefoonnummer").innerHTML="Telefoonnummer: " +localStorage.telefoonnummer;
+  } else {
+  document.getElementById("check_naam").innerHTML="Naam: ";
+  document.getElementById("check_telefoonnummer").innerHTML="Telefoonnummer: ";
+	  
+  }
+});
+
+
+</script>
+</head> 
+<body> 
+
+	<div data-role="page" class="type-index">
+
+		<div data-role="header" >
+		<h1>Pizzeria</h1>
+		<a href="index.html" data-icon="home" data-iconpos="right" data-direction="reverse">Home</a>
+		<a href="instellingen.html" data-icon="gear" data-iconpos="right" data-rel="reverse" >Instellingen</a>
+	</div><!-- /header -->
+
+	<div data-role="content">
+			
+<form method="post" id="form1">
+			
+			<table width="500" border="0" cellspacing="5" cellpadding="5">
+<tr>
+					<td><label for="txtFirst"><div id="check_naam"></div></label></td>
+				</tr>
+				<tr>	
+					<td><input type="text" id="naam" id="txtFirst" tabindex="10" autofocus required placeholder="Your First Name"></td>
+				</tr>
+				<tr>
+					<td><label for="txtLast"><div id="check_telefoonnummer"></div></label></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="telefoonnummer" id="txtLast" tabindex="10" autofocus required placeholder="Your Last Name"></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><input type="button" onclick="opslaan()" name="btnSubmit" value="Verzenden" tabindex="60">
+					</td>
+				</tr>
+			</table>
+			
+<div id="result"></div>
+		</form>
+
+
+		</div><!-- /ui-body wrapper -->	
+</div><!-- /page -->
+
+</body>
+</html>
